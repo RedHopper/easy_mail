@@ -139,7 +139,6 @@ class email_handler:
             raise Exception('get_from_inbox() - Error fetching data')
             return
         mail = email.message_from_bytes(fetched[0][1])
-        print(f'[D] mail type: ')
         subject = email.header.decode_header(mail['Subject'])[0]
         sender = email.header.decode_header(mail['From'])[0]
         if not isinstance(subject[0], str):
